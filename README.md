@@ -3,82 +3,35 @@ Built an advanced Audio Steganography system using the LSB technique to securely
 
 A secure steganography system that hides and extracts secret messages inside audio files using the Least Significant Bit (LSB) algorithm. Includes GUI, authentication, hidden file storage, multi-format audio support, and secure email transmission.
 
-**1. Overview
-**
+**1.Overview**
+
 This project implements advanced audio steganography using the LSB (Least Significant Bit) technique to hide secret messages within audio files without altering the sound quality.
 
 It includes:
 
-✔ A user-friendly GUI built with Python Tkinter.
-✔ Secure authentication using SQLite & hashed passwords.
-✔ Multi-format audio support.
-✔ Hidden output folders for storing encoded audio & extracted messages.
-✔ Automatic email sending of encoded audio + secret key.
-✔ Designed for secure communication, data privacy, and simple usability.
+This project features a user-friendly GUI developed with Python Tkinter and includes secure authentication using SQLite with hashed passwords. It supports multiple audio formats and stores both encoded audio files and extracted messages inside hidden output folders for enhanced privacy. The system also automates email delivery by sending the encoded audio along with the secret key directly to the receiver. Overall, the application is designed to ensure secure communication, protect sensitive data, and provide a simple, efficient user experience.
 
 **2. Features**
 
-✔ Hide secret text inside audio files
-✔ Extract hidden text using a secret key
-✔ Play/Stop audio (before and after encoding)
-✔ Supports multiple audio formats
-✔ Stores encoded files & extracted messages in hidden folders
-✔ Secure login & registration
-✔ Automatically emails encoded audio + secret key
-✔ Simple, clean Tkinter GUI
+The system allows users to securely hide secret text inside audio files and extract it later using a secret key. It includes Play and Stop audio options to verify sound quality before and after encoding and supports multiple audio formats for flexibility. Encoded audio files and extracted messages are automatically stored in hidden folders for added privacy. The application features secure login and registration, a clean Tkinter-based GUI, and automatic email delivery of the encoded audio along with the secret key, ensuring a smooth and secure communication workflow.
 
 **3. System Modules**
-** User Authentication**
 
-Users register and log in securely
-Passwords hashed using hashlib/bcrypt
-Ensures only authorized access
+The system provides secure user authentication, allowing users to register and log in with passwords hashed using hashlib/bcrypt to ensure only authorized access. The Hide Text feature embeds secret messages into audio files using the LSB method, stores the encoded audio in a hidden output folder, and automatically sends the encoded file along with a secret key to the receiver via email. The Extract Text module retrieves hidden messages from encoded audio using the secret key and saves the extracted text as a hidden file for added confidentiality. The application also includes Play/Stop Audio functionality, supporting multiple formats such as WAV and MP3, enabling users to verify that the audio quality remains unaffected. A secure Logout option is provided to safely end the session and prevent unauthorized access to previous user activity.
 
-**Hide Text**
+**4. How It Works (LSB Algorithm)**
 
-Embeds secret messages into audio using LSB
-Saves encoded audio in a hidden output folder
-Sends encoded audio + secret key to the receiver via email
+The hiding process begins by converting the secret message into a binary format, which is then embedded into the least significant bits of the audio samples. The modified audio is saved as an encoded output, and a secret key is generated to allow secure extraction. During the extraction process, the encoded audio is read, and the least significant bits are retrieved using the secret key. These bits are then reconstructed into the original binary message, converted back into readable text, and saved securely inside a hidden folder, ensuring confidentiality and protection of the hidden information.
 
-**Extract Text**
-
-Extracts text from encoded audio using the secret key
-Saves extracted message as a hidden text file
-
-**Play / Stop Audio**
-
-Plays both original and encoded audio
-Supports multiple formats (WAV, MP3, etc.)
-Confirms that audio quality remains unchanged
-
-**Logout**
-
-Safely ends session
-Prevents unauthorized access to previous user’s activity
-
-****4. How It Works (LSB Algorithm)**
-Hiding Process:**
-
-Convert the secret message into binary
-Replace the least significant bits of audio samples with message bits
-Save modified audio as encoded output
-Generate a secret key for extraction
-
-**Extraction Process:**
-
-Read encoded audio samples
-Extract LSB bits based on the secret key
-Reconstruct binary message → convert to readable text
-Save extracted message inside a hidden folder
 
 **Why LSB?**
 
 No change in audio quality
 Hard to detect
 Lightweight & efficient
-
-** 5. Installation & Setup
-Prerequisites:**
+ 
+**5. Installation & Setup**
+**Prerequisites:**
 
 Python 3.8+
 
@@ -94,39 +47,23 @@ pip install playsound
 CMD:python main.py
 
 **6. How to Use**
-1. Register/Login
 
-Create an account
-Log in to access features
-
-2. Hide Text
-
-Upload audio
-Enter secret message
-Provide sender/receiver email
-Encode → audio saved in hidden folder → auto-email sent
-
-3. Extract Text
-
-Upload encoded audio
-Enter secret key
-View extracted message → saved in hidden folder
-
-4. Play Audio
-
-Check sound quality before/after embedding
-
-5. Logout
-
-Safely exit the system
+Users begin by registering an account and logging in to access the system’s features. The Hide Text module allows users to upload an audio file, enter a secret message, and provide sender and receiver email addresses; upon encoding, the audio is saved in a hidden folder and automatically emailed to the receiver. The Extract Text module enables users to upload the encoded audio, enter the secret key, and view the extracted message, which is also stored securely in a hidden folder. The Play Audio feature allows users to verify sound quality before and after embedding, ensuring audio integrity. Finally, the Logout function safely exits the system, preventing unauthorized access and maintaining session security.
 
 **7. Screenshots**
 
-
 ![Pic1](https://github.com/user-attachments/assets/6be362db-e452-478d-b057-c6cf540c64a8)
+
+![Pic2](https://github.com/user-attachments/assets/b03bc74b-0694-4d39-ba72-71d6624f9adc)
+
+![Pic3](https://github.com/user-attachments/assets/8e37d065-7a7f-4d6b-ae14-3ffc88fb6019)
+
+![pic4](https://github.com/user-attachments/assets/eb261bf4-c211-47cc-b830-ea39ec4a5197)
+
 
 
 **8. Technology Stack**
+
 Programming & Libraries
 
 Python
@@ -137,3 +74,8 @@ Playsound / Pydub
 Security
 SQLite (database)
 Password Security Using PBKDF2
+
+**9. Acknowledgments**
+
+This project was developed as part of a learning initiative .
+Contributions and suggestions are welcome!!
